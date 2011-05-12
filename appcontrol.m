@@ -22,10 +22,15 @@
     NSString *input = [inputField stringValue];
     NSUInteger l = [input length];
     NSString *output;
-    if (l==0){
+    if (l==1){
         
         output=[[NSString alloc]initWithFormat:@"'%@' has one character", input];
     }
+    
+    if (l==0){
+        output=[[NSString alloc]initWithFormat:@"You really have to put something in"];
+    }
+    
     else
     {
         
@@ -33,6 +38,8 @@
     }
     
     [outputField setStringValue:output];
+    output=nil;
+    input=nil;
 }
 
 
